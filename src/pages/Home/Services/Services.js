@@ -1,10 +1,29 @@
-import React from 'react';
+
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Container, Row } from 'react-bootstrap';
+import Foods from '../Foods/Foods';
 
 const Services = () => {
+    const [foods, setFoods] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/foods')
+            .then(res => setFoods(res.data));
+    }, []);
+
     return (
-        <div>
-            <h2>This is Services field</h2>
-        </div>
+        <Container>
+            <h2 className="text-center my-3">Our Foods</h2>
+            <Row xs={1} md={3} className="g-4 mb-5">
+                {
+                    foods.map(food => <Foods
+                        key={food._id}
+                        food={food}
+                    />)
+                }
+            </Row>
+        </Container>
     );
 };
 

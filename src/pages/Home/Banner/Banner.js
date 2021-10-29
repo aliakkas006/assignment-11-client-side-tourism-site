@@ -3,7 +3,7 @@ import { Carousel } from 'react-bootstrap';
 
 const Banner = () => {
     return (
-        <div>
+        <div className="mb-5">
             {/* Carousel image slider */}
             <Carousel>
                 <Carousel.Item>
