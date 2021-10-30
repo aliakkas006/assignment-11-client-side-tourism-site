@@ -5,6 +5,8 @@ import Footer from "./pages/Home/Footer/Footer";
 import Header from "./pages/Home/Header/Header";
 import Home from "./pages/Home/Home/Home";
 import NotFound from "./pages/NotFound/NotFound";
+import PrivateRoute from "./pages/PrivateRoute/PrivateRoute";
+import SignIn from "./pages/SignIn/SignIn";
 
 function App() {
   return (
@@ -22,9 +24,13 @@ function App() {
               <Home />
             </Route>
 
-            <Route path="/details/:id">
-              <FoodDetails />
+            <Route path="/signin">
+              <SignIn />
             </Route>
+
+            <PrivateRoute path="/details/:id">
+              <FoodDetails />
+            </PrivateRoute>
 
             <Route path="*">
               <NotFound />

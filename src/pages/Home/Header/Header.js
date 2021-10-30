@@ -1,8 +1,11 @@
 import React from 'react';
 import { Container, Nav, Navbar, Button } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const Header = () => {
+    const { user, logOut } = useAuth();
+
     return (
         <>
             {/* Navigation bar */}
@@ -20,7 +23,16 @@ const Header = () => {
                             Home
                         </NavLink>
                     </Nav>
-                    <Button variant="light">Sign in</Button>
+                    {
+                        user?.email ? (
+                            <Button onClick={logOut} variant="light">Sign out</Button>
+                        ) : (
+                                <Link to="/signin">
+                                    <Button variant="light">Sign in</Button>
+                                </Link>
+                        )
+                    }
+                    
                 </Container>
             </Navbar>
 
