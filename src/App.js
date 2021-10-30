@@ -4,6 +4,7 @@ import FoodDetails from "./pages/Details/FoodDetails/FoodDetails";
 import Footer from "./pages/Home/Footer/Footer";
 import Header from "./pages/Home/Header/Header";
 import Home from "./pages/Home/Home/Home";
+import MyOrder from "./pages/MyOrder/MyOrder";
 import NotFound from "./pages/NotFound/NotFound";
 import PrivateRoute from "./pages/PrivateRoute/PrivateRoute";
 import SignIn from "./pages/SignIn/SignIn";
@@ -22,6 +23,10 @@ function App() {
 
             <Route path="/home">
               <Home />
+            </Route>
+
+            <Route path="/order">
+              <MyOrder />
             </Route>
 
             <Route path="/signin">

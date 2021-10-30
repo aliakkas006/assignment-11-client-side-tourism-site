@@ -1,11 +1,9 @@
 import React from 'react';
 import { Card, Button, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import useAuth from '../../../hooks/useAuth';
 
 const Foods = ({ food }) => {
     const { _id, name, img, description, price } = food;
-    const { user } = useAuth();
 
     return (
         <Col>
@@ -18,7 +16,7 @@ const Foods = ({ food }) => {
                         <br />
                         Price: ${price}
                     </Card.Text>
-                    
+
                     <Link to={`/details/${_id}`}>
                         <Button variant="primary">Buy now!</Button>
                     </Link>
