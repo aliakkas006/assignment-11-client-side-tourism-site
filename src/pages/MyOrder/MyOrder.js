@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Button, Modal } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
 
 const MyOrder = () => {
@@ -9,7 +9,7 @@ const MyOrder = () => {
     const [isDeleted, setIsDeleted] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/order')
+        axios.get('https://guarded-hollows-00315.herokuapp.com/order')
             .then(res => setOrders(res?.data));
     }, [isDeleted]);
 
@@ -17,10 +17,10 @@ const MyOrder = () => {
 
     // delete a order
     const handleDeleteOrder = (id) => {
-        axios.delete(`http://localhost:5000/order/${id}`)
+        axios.delete(`https://guarded-hollows-00315.herokuapp.com/order/${id}`)
             .then(res => {
                 if (res?.data?.deletedCount) {
-                    alert('Order Deleted successfully!');
+                    alert('Order Deleted Successfully!');
                     setIsDeleted(true);
                 } else {
                     setIsDeleted(false);
@@ -34,6 +34,7 @@ const MyOrder = () => {
             <ul>
                 {
                     matchedOrders.map(mo => <li key={mo._id}>
+                        {mo.imgURL}
                         Food Name: {mo.foodName}
                         <br />
                         -- Price: ${mo.price}

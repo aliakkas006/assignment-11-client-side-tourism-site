@@ -8,7 +8,7 @@ const Services = () => {
     const [foods, setFoods] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/foods')
+        axios.get('https://guarded-hollows-00315.herokuapp.com/foods')
             .then(res => setFoods(res.data));
     }, []);
 

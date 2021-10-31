@@ -6,7 +6,7 @@ const DeliveryMan = () => {
     const [deliveryMan, setDeliveryMan] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/delivery')
+        axios.get('https://guarded-hollows-00315.herokuapp.com/delivery')
             .then(res => setDeliveryMan(res.data));
     }, []);
 

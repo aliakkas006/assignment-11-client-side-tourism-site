@@ -9,15 +9,21 @@ const Footer = () => {
                     <div className="row">
 
                         <div className="col-md-4 text-light">
-                            <h2>Home delivery services</h2>
+                            <h4>Home delivery services</h4>
                         </div>
 
                         <div className="col-md-4 text-light">
-                            <h2>Contact us</h2>
+                            <h4>Contact us</h4>
                         </div>
 
                         <div className="col-md-4 text-light">
-                            <h2>Social media links</h2>
+                            <h4>Follow us on:</h4>
+                            <h5>
+                                <i class="fab fa-facebook ms-3"></i>
+                                <i class="fab fa-instagram ms-3"></i>
+                                <i class="fab fa-twitter ms-3"></i>
+                                <i class="fab fa-youtube ms-3"></i>
+                            </h5>
                         </div>
                     </div>
                 </Container>

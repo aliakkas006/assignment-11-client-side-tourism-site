@@ -11,7 +11,7 @@ const Header = () => {
             {/* Navigation bar */}
             <Navbar className="sticky-top" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+                    <Navbar.Brand href="#home">Fast Food Delivery</Navbar.Brand>
                     <Nav className="me-auto">
                         <NavLink
                             to="/home"
@@ -36,6 +36,7 @@ const Header = () => {
                                 >
                                     My Orders
                                 </NavLink>
+
                                 <NavLink className="me-3"
                                     to="/allOrder"
                                     activeStyle={{
@@ -43,7 +44,7 @@ const Header = () => {
                                         color: "red"
                                     }}
                                 >
-                                    Mange all Orders
+                                    Manage all Orders
                                 </NavLink>
                                 <NavLink className="me-3"
                                     to="/addService"
