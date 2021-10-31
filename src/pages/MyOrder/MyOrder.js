@@ -31,20 +31,23 @@ const MyOrder = () => {
     return (
         <div>
             <h2>This is your orders:</h2>
-            <ul>
-                {
-                    matchedOrders.map(mo => <li key={mo._id}>
-                        {mo.imgURL}
-                        Food Name: {mo.foodName}
-                        <br />
-                        -- Price: ${mo.price}
-                        <br />
-                        <Button
-                            onClick={()=> handleDeleteOrder(mo._id)}
-                            className="p-0" variant="danger">Delete Order!</Button>
-                    </li>)
-                }
-            </ul>
+            <div className="d-flex justify-content-center mb-5">
+                <div className="w-50">
+                    {
+                        matchedOrders.map(mo => <li
+                            className="border border-primary mb-3 p-5 text-center"
+                            key={mo._id}>
+                            Food Name: {mo.foodName}
+                            <br />
+                            -- Price: ${mo.price}
+                            <br />
+                            <Button
+                                onClick={() => handleDeleteOrder(mo._id)}
+                                className="p-0" variant="danger">Delete Order!</Button>
+                        </li>)
+                    }
+                </div>
+            </div>
         </div>
     );
 };

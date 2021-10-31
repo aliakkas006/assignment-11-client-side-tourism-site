@@ -10,11 +10,11 @@ const Foods = ({ food }) => {
             <Card className="h-100">
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
-                    <Card.Title> {name} </Card.Title>
+                    <Card.Title className="text-info"> {name} </Card.Title>
                     <Card.Text>
                         {description}
                         <br />
-                        Price: ${price}
+                        <h5 className="text-warning">Price: ${price}</h5>
                     </Card.Text>
 
                     <Link to={`/details/${_id}`}>

@@ -51,17 +51,17 @@ const FoodDetails = () => {
                 {/* react hook form */}
                 <form className="d-flex flex-column justify-content-center align-items-center" onSubmit={handleSubmit(onSubmit)}>
 
-                    <input className="w-50 mb-3" {...register("name")} defaultValue={user?.displayName} />
+                    <input className="w-50 mb-3 p-1" {...register("name")} defaultValue={user?.displayName} />
 
-                    <input className="w-50 mb-3" {...register("email")} defaultValue={user?.email} />
+                    <input className="w-50 mb-3 p-1" {...register("email")} defaultValue={user?.email} />
 
-                    <input className="w-50 mb-3" type="number" {...register("phone", { required: true })} placeholder="Number" />
+                    <input className="w-50 mb-3 p-1" type="number" {...register("phone", { required: true })} placeholder="Number" />
                     
                     <textarea className="w-50 mb-3" {...register("address", { required: true })} placeholder="Address" />
 
-                    <input className="w-50 mb-3" {...register("foodName")} defaultValue={matchedItem?.name} />
+                    <input className="w-50 mb-3 p-1" {...register("foodName")} defaultValue={matchedItem?.name} />
 
-                    <input className="w-50 mb-3" type="number" {...register("price")} defaultValue={matchedItem?.price} />
+                    <input className="w-50 mb-3 p-1" type="number" {...register("price")} defaultValue={matchedItem?.price} />
                     
                     <input className="w-50 btn btn-warning text-light" type="submit" />
                     

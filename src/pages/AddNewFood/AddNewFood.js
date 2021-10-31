@@ -3,10 +3,15 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 
 const AddService = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         axios.post('https://guarded-hollows-00315.herokuapp.com/addFood', data)
-            .then(res => console.log(res.data));
+            .then(res => {
+                if (res?.data?.insertedId) {
+                    alert('Added Food Successfully!');
+                    reset();
+                }
+            });
     }
 
     return (
